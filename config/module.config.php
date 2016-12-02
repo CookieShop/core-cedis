@@ -2,7 +2,7 @@
 $path=  realpath((__DIR__).'/../').'/src/';
 
 return [
-    'adteam_core_checkout'=>[
+    'adteam_core_cedis'=>[
         'test'=>$path
     ],
     'doctrine' => [
@@ -15,7 +15,7 @@ return [
             ],
         ],
         'driver' => [
-            'Doctrine_driver_checkout' => [
+            'Doctrine_driver_cedis' => [
                 'class' => \Doctrine\ORM\Mapping\Driver\AnnotationDriver::class,
                 'cache' => 'array',
                 'paths' => [
@@ -24,7 +24,7 @@ return [
             ],
             'orm_default' => [
                 'drivers' => [
-                    'Adteam\\Core\\Cedis' => 'Doctrine_driver_checkout',
+                    'Adteam\\Core\\Cedis' => 'Doctrine_driver_cedis',
                 ],
             ],
         ],
