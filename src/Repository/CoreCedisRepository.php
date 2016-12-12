@@ -26,6 +26,8 @@ class CoreCedisRepository extends EntityRepository{
                 ->select("U.id, U.cedisId, U.namesCedis,U.street,U.extNumber,".
                         "U.intNumber,U.location,U.reference,U.city,U.state,".
                         "U.zipCode,U.telephone")
+                ->where('U.active = :active')
+                ->setParameter('active', 1)                
                 ->getQuery()->getResult();         
     }
 }
