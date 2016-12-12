@@ -15,11 +15,17 @@ use Doctrine\ORM\EntityRepository;
 
 class CoreCedisRepository extends EntityRepository{
     
+    /**
+     * 
+     * @return type
+     */
     public function fetchAll()
     {
         return $this
                 ->createQueryBuilder('U')
-                ->select("U.id, U.cedisId, U.namesCedis")
+                ->select("U.id, U.cedisId, U.namesCedis,U.street,U.extNumber,".
+                        "U.intNumber,U.location,U.reference,U.city,U.state,".
+                        "U.zipCode,U.telephone")
                 ->getQuery()->getResult();         
     }
 }
